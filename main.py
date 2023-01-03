@@ -5,6 +5,7 @@ import time
 if __name__ == '__main__':
     start_time = time.time()
     a = GoogleApiKey()
-    a.get_key()
+    a.create_multi_projects()
+    # a.get_key()
     print("--- %s seconds ---" % (time.time() - start_time))
 

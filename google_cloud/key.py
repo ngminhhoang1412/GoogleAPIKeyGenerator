@@ -68,8 +68,11 @@ class GoogleApiKey:
                 profile.start()
             except:
                 self.error = "CantsignintoGoogleAccount"
+                Helper.write_error(error=self.error, email=email[0])
+                self.error = None
+                self.driver.quit()
                 continue
-            for num in range(1, 11):
+            for num in range(7, 11):
                 name = email[0].split('@')[0]
                 name = Helper.change_name(name)
                 self.create_project(project_name=name + str(num))

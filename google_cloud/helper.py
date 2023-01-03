@@ -21,9 +21,12 @@ def write_key(key, email):
         file.write(email + ":" + key + '\n')
 
 
-def write_error(error, email, name_project):
+def write_error(error, email, name_project=None):
     with open('error_email.txt', 'a') as file:
-        file.write(email + ":" + error + ":" + name_project + '\n')
+        if name_project:
+            file.write(email + ":" + error + ":" + name_project + '\n')
+        else:
+            file.write(email + ":" + error + '\n')
 
 
 def check_number(email):
