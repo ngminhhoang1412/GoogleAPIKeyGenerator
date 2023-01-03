@@ -74,7 +74,7 @@ class GoogleApiKey:
                 name = Helper.change_name(name)
                 self.create_project(project_name=name + str(num))
                 if self.error is not None:
-                    Helper.write_error(error=self.error, email=email, name_project=(name + str(num)))
+                    Helper.write_error(error=self.error, email=email[0], name_project=(name + str(num)))
                     self.error = None
             Helper.delete_temp()
 
